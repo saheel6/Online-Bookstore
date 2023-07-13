@@ -1,0 +1,50 @@
+{% extends 'navbar.html' %}
+
+{% block nav %}
+
+
+
+<style>
+   .btn a {
+     text-decoration: none;
+     color: antiquewhite;
+   }
+ </style>
+<div class="row" style="margin-left: 20px;">
+   {% for i in cartitem.item %}
+   <div class="card ml-5 p-5"
+     style="width: 20rem;margin-left: 41px; border-radius: 20px; margin-top: 50px;background: rgb(2,0,36);background: linear-gradient(90deg, rgb(208, 208, 220) 0%, rgb(197, 205, 226) 9%, rgb(190, 168, 190) 26%, rgb(174, 174, 196) 61%, rgb(161, 178, 181) 100%);">
+     <img src="{{i.Books.picture.url}}" class="card-img-top" alt="hi hello"
+       style="width: 150px;  height: 150px;margin-left: 35px;">
+     <div class="card-body" style="border-radius: 20px;">
+       <h5 class="card-title"> {{i.Books.name}}</h5>
+ 
+     </div >
+     <ul class="list-group list-group-flush" style="border-radius: 20px;background: rgb(2,0,36);background: linear-gradient(90deg, rgb(208, 208, 220) 0%, rgb(197, 205, 226) 9%, rgb(190, 168, 190) 26%, rgb(174, 174, 196) 61%, rgb(161, 178, 181) 100%);">
+      <li class="list-group-item"style="background: rgb(2,0,36);background: linear-gradient(90deg, rgb(224, 224, 230) 0%, rgb(227, 228, 231) 9%, rgb(231, 227, 231) 26%, rgb(227, 227, 233) 61%, rgb(232, 236, 237) 100%);"><b>{{i.Books.category}}</b></li>
+       <li class="list-group-item"style="background: rgb(2,0,36);background: linear-gradient(90deg, rgb(224, 224, 230) 0%, rgb(227, 228, 231) 9%, rgb(231, 227, 231) 26%, rgb(227, 227, 233) 61%, rgb(232, 236, 237) 100%);">₹ {{i.Books.price}}</li>
+     </ul><br>
+   
+     <button class="btn btn-danger" style="margin-right: 20px;"><a href="{% url 'delcart' id=i.id %}">delete</a></button><br>
+     <button class="btn btn-primary" style="width: 202px;"><a href="{% url 'ckout' cid=i.id %}">place order</a></button>
+  
+
+
+
+
+
+   </div>
+   {%endfor%}
+ </div>
+        {% endblock %}
+
+</body>
+</html>
+
+
+
+
+
+
+
+

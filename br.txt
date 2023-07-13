@@ -1,0 +1,5 @@
+ <br>
+          <label for="">author</label>
+          <input type="text" name="author" id="">
+          <label for="">category</label>
+          <input type="text" name="category" id="">

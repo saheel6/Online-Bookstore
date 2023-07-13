@@ -1,0 +1,41 @@
+{% extends 'navbar.html' %}
+
+{% block nav %}
+
+    
+  
+<style>
+  .btn a {
+  text-decoration: none;
+  color: antiquewhite;
+}
+</style>
+
+  <div class="row" style="margin-left: 20px;">
+    {% for i in fb %}
+    <div class="card ml-5 p-5"
+      style="width: 20rem;margin-left: 41px;margin-top: 50px;  border-radius: 20px; background: rgb(2,0,36);background: linear-gradient(90deg, rgb(208, 208, 220) 0%, rgb(197, 205, 226) 9%, rgb(190, 168, 190) 26%, rgb(174, 174, 196) 61%, rgb(161, 178, 181) 100%);">
+      <img src="{{i.picture.url}}" class="card-img-top" alt="hi hello"
+        style="width: 150px; height: 150px;margin-left: 35px;">
+      <div class="card-body">
+        <h5 class="card-title">{{i.name}}</h5>
+        <p>{{i.description}}</p>
+  
+      </div >
+      <ul class="list-group list-group-flush" style="border-radius: 20px;background: rgb(2,0,36);background: linear-gradient(90deg, rgb(208, 208, 220) 0%, rgb(197, 205, 226) 9%, rgb(190, 168, 190) 26%, rgb(174, 174, 196) 61%, rgb(161, 178, 181) 100%);">
+        <li class="list-group-item"style="background: rgb(2,0,36);background: linear-gradient(90deg, rgb(224, 224, 230) 0%, rgb(227, 228, 231) 9%, rgb(231, 227, 231) 26%, rgb(227, 227, 233) 61%, rgb(232, 236, 237) 100%);"><b>{{i.category}}</b></li>
+        <li class="list-group-item"style="background: rgb(2,0,36);background: linear-gradient(90deg, rgb(224, 224, 230) 0%, rgb(227, 228, 231) 9%, rgb(231, 227, 231) 26%, rgb(227, 227, 233) 61%, rgb(232, 236, 237) 100%);">₹ {{i.price}}</li>
+       
+      </ul><br>
+      <button class="btn btn-primary" style="border-radius: 10px;">
+        <a class="" href="{% url 'addcart' pid=i.id %}">
+          <i class="fa fa-shopping-cart"></i> add to cart
+      </a>
+       </button>
+    </div>
+    {%endfor%}
+  </div>
+
+  {% endblock %}
+</body>
+</html>

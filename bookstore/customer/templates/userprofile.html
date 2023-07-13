@@ -1,0 +1,27 @@
+{% extends 'navbar.html' %}
+
+{% block nav %}
+
+<style>
+   p,h3,hr{
+      color: aliceblue;
+   }
+</style>
+<div style="margin-top: 100px;margin-left: 20%;">
+ <div style="top: 20px;">
+       
+ <form method="POST" >
+    {% csrf_token %}
+    {{ form.as_p }}
+    <hr style="width: 750px;">
+    <h3>Change Password</h3>
+    {{ password_form.as_p }}
+    <button type="submit">Save</button>
+ </form>
+ </div>
+</div>
+
+{% endblock %}
+
+</body>
+</html>
